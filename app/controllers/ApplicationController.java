@@ -566,6 +566,33 @@ public class ApplicationController extends Controller {
 			SecurityAuthentication securityAuthentication = new SecurityAuthentication();
 			Attendance attendance = objectMapper.readValue(jsonAttendance, Attendance.class);
 			attendance.setAttendanceDate(LocalDate.now().toString());
+			
+			int arrivalTotalHours = Integer.parseInt(attendance.getArrivalHours());
+			int departureTotalHours = Integer.parseInt(attendance.getDepartureHours());
+			int arrivalTotalMinutes = Integer.parseInt(attendance.getArrivalMinutes());
+			int departureTotalMinutes = Integer.parseInt(attendance.getDepartureMinutes());
+
+			if (attendance.getArrivalAmPm().equals("PM"))
+				arrivalTotalHours = arrivalTotalHours + 12;
+			if (attendance.getDepartureAmPm().equals("PM"))
+				departureTotalHours = departureTotalHours + 12;
+
+			int totalDurationHours = departureTotalHours - arrivalTotalHours;
+
+			int totalDurationMinutes = 0;
+
+			if (arrivalTotalMinutes < departureTotalMinutes) {
+				totalDurationMinutes = arrivalTotalMinutes + 60 - departureTotalMinutes;
+				totalDurationHours = totalDurationHours - 1;
+			} else {
+				totalDurationMinutes = arrivalTotalMinutes - departureTotalMinutes;
+			}
+
+			if (totalDurationHours < 0) {
+				totalDurationHours = 24 - arrivalTotalHours;
+			}
+			attendance.setDurationHours(Integer.toString(totalDurationHours));
+			attendance.setDurationMinutes(Integer.toString(totalDurationMinutes));
 			attendance.setPresent("Present");
 			attendance.setApproved("Unapproved");
 			attendance.setEmployeeId(Integer.valueOf(securityAuthentication.getEmployeeId(ctx())));
@@ -664,10 +691,10 @@ public class ApplicationController extends Controller {
 
 			for (Attendance attendance : asList) {
 
-				int arrivalTotalHours = attendance.getArrivalHours();
-				int departureTotalHours = attendance.getDepartureHours();
-				int arrivalTotalMinutes = attendance.getArrivalMinutes();
-				int departureTotalMinutes = attendance.getDepartureMinutes();
+				int arrivalTotalHours = Integer.parseInt(attendance.getArrivalHours());
+				int departureTotalHours = Integer.parseInt(attendance.getDepartureHours());
+				int arrivalTotalMinutes = Integer.parseInt(attendance.getArrivalMinutes());
+				int departureTotalMinutes = Integer.parseInt(attendance.getDepartureMinutes());
 
 				if (attendance.getArrivalAmPm().equals("PM"))
 					arrivalTotalHours = arrivalTotalHours + 12;
@@ -688,8 +715,8 @@ public class ApplicationController extends Controller {
 				if (totalDurationHours < 0) {
 					totalDurationHours = 24 - arrivalTotalHours;
 				}
-				attendance.setDurationHours(totalDurationHours);
-				attendance.setDurationMinutes(totalDurationMinutes);
+				attendance.setDurationHours(Integer.toString(totalDurationHours));
+				attendance.setDurationMinutes(Integer.toString(totalDurationMinutes));
 
 				entityManager.merge(attendance);
 			}

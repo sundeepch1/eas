@@ -11,14 +11,14 @@ public class Attendance {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long attendanceId;
 	private String attendanceDate;
-	private int arrivalHours;
-	private int arrivalMinutes;
+	private String arrivalHours;
+	private String arrivalMinutes;
 	private String arrivalAmPm;
-	private int departureHours;
-	private int departureMinutes;
+	private String departureHours;
+	private String departureMinutes;
 	private String departureAmPm;
-	private int durationHours;
-	private int durationMinutes;
+	private String durationHours;
+	private String durationMinutes;
 	private String present;
 	private String approved;
 	private int employeeId;
@@ -35,16 +35,16 @@ public class Attendance {
 	public void setAttendanceDate(String attendanceDate) {
 		this.attendanceDate = attendanceDate.trim();
 	}
-	public int getArrivalHours() {
+	public String getArrivalHours() {
 		return arrivalHours;
 	}
-	public void setArrivalHours(int arrivalHours) {
+	public void setArrivalHours(String arrivalHours) {
 		this.arrivalHours = arrivalHours;
 	}
-	public int getArrivalMinutes() {
+	public String getArrivalMinutes() {
 		return arrivalMinutes;
 	}
-	public void setArrivalMinutes(int arrivalMinutes) {
+	public void setArrivalMinutes(String arrivalMinutes) {
 		this.arrivalMinutes = arrivalMinutes;
 	}
 	public String getArrivalAmPm() {
@@ -53,16 +53,16 @@ public class Attendance {
 	public void setArrivalAmPm(String arrivalAmPm) {
 		this.arrivalAmPm = arrivalAmPm.toUpperCase().trim();
 	}
-	public int getDepartureHours() {
+	public String getDepartureHours() {
 		return departureHours;
 	}
-	public void setDepartureHours(int departureHours) {
+	public void setDepartureHours(String departureHours) {
 		this.departureHours = departureHours;
 	}
-	public int getDepartureMinutes() {
+	public String getDepartureMinutes() {
 		return departureMinutes;
 	}
-	public void setDepartureMinutes(int departureMinutes) {
+	public void setDepartureMinutes(String departureMinutes) {
 		this.departureMinutes = departureMinutes;
 	}
 	public String getDepartureAmPm() {
@@ -72,16 +72,16 @@ public class Attendance {
 		this.departureAmPm = departureAmPm.toUpperCase().trim();
 	}
 	
-	public int getDurationHours() {
+	public String getDurationHours() {
 		return durationHours;
 	}
-	public void setDurationHours(int durationHours) {
+	public void setDurationHours(String durationHours) {
 		this.durationHours = durationHours;
 	}
-	public int getDurationMinutes() {
+	public String getDurationMinutes() {
 		return durationMinutes;
 	}
-	public void setDurationMinutes(int durationMinutes) {
+	public void setDurationMinutes(String durationMinutes) {
 		this.durationMinutes = durationMinutes;
 	}
 	

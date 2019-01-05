@@ -174,7 +174,14 @@ var myApp = angular
 			}, function errorCallback(response) {
 				alert("error");
 			});
-
+			
+			$scope.arrivalHours = "09";
+			$scope.arrivalMinutes ="00";
+			$scope.arrivalAmPm = "AM";
+			$scope.departureHours = "06";
+			$scope.departureMinutes ="00";
+			$scope.departureAmPm = "PM";
+			
 			$scope.attendanceSave = function(isValid) {
 
 				if (isValid) {
@@ -678,37 +685,45 @@ var myApp = angular
 						alert("error");
 					});
 
+					$scope.arrivalHours = "09";
+					$scope.arrivalMinutes ="00";
+					$scope.arrivalAmPm = "AM";
+					$scope.departureHours = "06";
+					$scope.departureMinutes ="00";
+					$scope.departureAmPm = "PM";
+					
+					/*var arrivalTotalHours = parseInt($scope.arrivalHours);
+					var departureTotalHours = parseInt($scope.departureHours);
+					var arrivalTotalMinutes = parseInt($scope.arrivalMinutes);
+					var departureTotalMinutes = parseInt($scope.departureMinutes);
+
+					if ($scope.arrivalAmPm == 'PM')
+						var arrivalTotalHours = arrivalTotalHours + 12;
+					if ($scope.departureAmPm == 'PM')
+						var departureTotalHours = departureTotalHours + 12;
+
+					var totalDurationHours = departureTotalHours
+							- arrivalTotalHours;
+
+					var totalDurationMinutes = 0;
+
+					if (arrivalTotalMinutes < departureTotalMinutes) {
+						totalDurationMinutes = arrivalTotalMinutes + 60
+								- departureTotalMinutes;
+						totalDurationHours = totalDurationHours - 1;
+					}
+
+					if (totalDurationHours < 0) {
+						totalDurationHours = 24 - totalDurationHours;
+					}
+					$scope.totalDurationHoursDisplay = totalDurationHours;
+					totalDurationMinutes = arrivalTotalMinutes
+					- departureTotalMinutes;
+					$scope.totalDurationMinutesDisplay = totalDurationMinutes;
+					*/
 					$scope.attendanceSave = function(isValid) {
 
 						if (isValid) {
-							var arrivalTotalHours = $scope.arrivalHours;
-							var departureTotalHours = $scope.departureHours;
-							var arrivalTotalMinutes = $scope.arrivalMinutes;
-							var departureTotalMinutes = $scope.departureTotalMinutes;
-
-							if ($scope.arrivalAmPm == 'PM')
-								var arrivalTotalHours = arrivalTotalHours + 12;
-							if ($scope.departureAmPm == 'PM')
-								var departureTotalHours = departureTotalHours + 12;
-
-							var totalDurationHours = departureTotalHours
-									- arrivalTotalHours;
-
-							var totalDurationMinutes = 0;
-
-							if (arrivalTotalMinutes < departureTotalMinutes) {
-								totalDurationMinutes = arrivalTotalMinutes + 60
-										- departureTotalMinutes;
-								totalDurationHours = totalDurationHours - 1;
-							}
-
-							if (totalDurationHours < 0) {
-								totalDurationHours = 24 - totalDurationHours;
-							}
-
-							totalDurationMinutes = arrivalTotalMinutes
-									- departureTotalMinutes;
-
 							var data = {
 								'attendanceDate' : $scope.attendanceDate,
 								'arrivalHours' : $scope.arrivalHours,
@@ -717,8 +732,6 @@ var myApp = angular
 								'departureHours' : $scope.departureHours,
 								'departureMinutes' : $scope.departureMinutes,
 								'departureAmPm' : $scope.departureAmPm,
-								'durationHours' : totalDurationHours,
-								'durationMinutes' : totalDurationMinutes,
 								'employeeId' : $rootScope.employeeId
 							}
 

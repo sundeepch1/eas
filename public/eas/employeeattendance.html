@@ -18,13 +18,19 @@
 								<td colspan="4">{{attendance.attendanceDate | date : "fullDate"}}</td>
 							</tr>
 							<tr>
+								<td></td>
+								<td class="attendance-tr-style">Hours</td>
+								<td class="attendance-tr-style">Minutes</td>
+								<td class="attendance-tr-style">AM/PM</td>
+							</tr>
+							<tr>
 								<td>Arrival Time</td>
-								<td><input type="number" name="arrival" min="1" max="12"
+								<td><input type="text" name="arrival" 
 									ng-model="arrivalHours" class="form-control"
-									placeholder="Hours" required></td> <span style=" color:white">:</span>
-								<td><input type="number" name="arrival" min="0" max="59"
+									 required></td> <span style=" color:white">:</span>
+								<td><input type="text"
 									ng-model="arrivalMinutes" class="form-control"
-									placeholder="Minutes" required></td>
+									required></td>
 								<td><select name="arrivalAmPm" type="text"
 									ng-model="arrivalAmPm" class="form-control" required>
 										<option value="" disabled selected>Select AM/PM</option>
@@ -40,12 +46,12 @@
 							</tr>
 							<tr>
 								<td>Departure Time</td>
-								<td><input type="number" name="departureHours" min="1" max="12"
+								<td><input type="text" name="departureHours"
 									ng-model="departureHours" class="form-control"
-									placeholder="Hours" required></td>
-								<td><input type="number" name="departureMinutes" min="0" max="59"
+									 required></td>
+								<td><input type="text" name="departureMinutes" 
 									ng-model="departureMinutes" class="form-control"
-									placeholder="Minutes" required></td>
+									 required></td>
 								<td><select name="departureAmPm" type="text"
 									ng-model="departureAmPm" class="form-control" required>
 										<option value="" disabled selected>Select AM/PM</option>
@@ -57,6 +63,11 @@
 								<span ng-show="attendanceForm.departureMiutes.$invalid && !registerForm.departure.$pristine"></span>	
 								 <span ng-show="attendanceForm.departureAmPm.$invalid && !registerForm.departureAmPm.$pristine">Time is required</span></td>
 							</tr>
+							<!-- <tr>
+								<td>Duration</td>
+								<td colspan="3" ng-bind="totalDurationHoursDisplay + ' ' + 'Hours' + ' ' + totalDurationMinutesDisplay + ' ' + 'Minutes'"></td>
+							</tr> -->
+							<tr>
 								<td>
 									<a href="#!employeeindex" role="button" class="btn btn-success">Cancel</a>
 								</td>
