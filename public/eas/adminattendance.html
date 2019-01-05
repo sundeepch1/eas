@@ -1,0 +1,74 @@
+<div class="container-fluid" ng-controller="attendanceController">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10 div-color">
+			<h1 class="common-title">Employee Attendance</h1>
+			<form name="attendanceForm" ng-submit="attendanceSave(attendanceForm.$valid)" novalidate>
+				<div class="table-responsive">
+					<table class="table table-striped table-dark">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col" colspan="2" >{{attendanceValid}}</th>
+								<th scope="col" colspan="3" >{{attendanceSuccess}}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Date(Today)</td>
+								<td colspan="4">{{attendance.attendanceDate | date : "fullDate"}}</td>
+							</tr>
+							<tr>
+								<td>Arrival Time</td>
+								<td><input type="number" name="arrival" min="1" max="12"
+									ng-model="arrivalHours" class="form-control"
+									placeholder="Hours" required></td> <span style=" color:white">:</span>
+								<td><input type="number" name="arrival" min="0" max="59"
+									ng-model="arrivalMinutes" class="form-control"
+									placeholder="Minutes" required></td>
+								<td><select name="arrivalAmPm" type="text"
+									ng-model="arrivalAmPm" class="form-control" required>
+										<option value="" disabled selected>Select AM/PM</option>
+										<option value="AM" selected>AM</option>
+										<option value="PM">PM</option>
+								</select></td>
+								<td><span ng-show="attendanceForm.arrivalHours.$invalid && !registerForm.arrival.$pristine"></span>
+										<span
+									ng-show="attendanceForm.arrivalMinutes.$invalid && !registerForm.arrival.$pristine">
+										number is required </span>
+									<span ng-show="attendanceForm.arrivalAmPm.$invalid && !registerForm.arrivalAmPm.$pristine">Time is required</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Departure Time</td>
+								<td><input type="number" name="departureHours" min="1" max="12"
+									ng-model="departureHours" class="form-control"
+									placeholder="Hours" required></td>
+								<td><input type="number" name="departureMinutes" min="0" max="59"
+									ng-model="departureMinutes" class="form-control"
+									placeholder="Minutes" required></td>
+								<td><select name="departureAmPm" type="text"
+									ng-model="departureAmPm" class="form-control" required>
+										<option value="" disabled selected>Select AM/PM</option>
+										<option value="AM" selected>AM</option>
+										<option value="PM">PM</option>
+								</select></td>
+								<td>
+								<span ng-show="attendanceForm.departureHours.$invalid && !registerForm.departure.$pristine"></span>
+								<span ng-show="attendanceForm.departureMiutes.$invalid && !registerForm.departure.$pristine"></span>	
+								 <span ng-show="attendanceForm.departureAmPm.$invalid && !registerForm.departureAmPm.$pristine">Time is required</span></td>
+							</tr>
+								<td>
+									<a href="#!adminindex" role="button" class="btn btn-success">Cancel</a>
+								</td>
+								<td colspan="4">
+									<button href="" role="button" class="btn btn-success" style="float: right">Save</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>

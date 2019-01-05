@@ -1,0 +1,214 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10 div-color">
+			<h1 class="common-title">Edit Employee</h1>
+			<form name="registerForm">
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-9">
+						<div class="form-group form-group-style">
+							<label for="" class="level-top-style">First Name:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-user fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="text" name="firstName" ng-model="employee.firstName"
+										required class="form-control fontawesome-input-style"
+										placeholder="Enter your first name">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.firstName.$error.required">First
+										name is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Middle Name:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-user fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="text" name="middleName" ng-model="employee.middleName"
+										required class="form-control fontawesome-input-style"
+										placeholder="Enter your middle name(optional)">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.middleName.$error.required">Middle
+										name is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Last Name:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-user fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="text" name="lastName" ng-model="employee.lastName" required
+										class="form-control fontawesome-input-style"
+										placeholder="Enter your last name">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.lastName.$error.required">Last
+										name is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Gender:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-mars-double fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<select name="gender" type="text" ng-model="employee.gender" required
+										class="form-control fontawesome-input-style">
+										<option value="" disabled selected>Select gender</option>
+										<option>Male</option>
+										<option>Female</option>
+										<option>Unknown</option>
+									</select>
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.gender.$error.required">Gender
+										is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Employee Type</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-mars-double fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<select name="employeeType" type="text" ng-model="employee.employeeType" required
+										class="form-control fontawesome-input-style">
+										<option value="" disabled selected>Select employee Type</option>
+										<option>Administration</option>
+										<option>Technology</option>
+										<option>Operation</option>
+									</select>
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span
+										ng-show="registerForm.employeeType.$invalid && !registerForm.employeeType.$pristine">{{emoloyeeTypeMessage}}
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Age:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-arrow-up fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="text" name="age" ng-model="employee.age" required
+										class="form-control fontawesome-input-style"
+										placeholder="Enter your age">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.age.$error.required">Age is
+										required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Date Of Birth:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-birthday-cake fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7 input-group date" id='datepicker'>
+									<input type="text" name="dateOfBirth"   ng-model="employee.dateOfBirth"
+										required id="datepicker"
+										class="form-control fontawesome-input-style calender-input-style"
+										placeholder="Enter your date of birth"> <span
+										class="input-group-addon"> <i
+										class="fas fa-calendar-alt fontawesome-style calender-fontawesome-style"></i>
+									</span>
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.dateOfBirth.$error.required">Date
+										of birth is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Address:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-address-card fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="text" name="address" ng-model="employee.address" required
+										class="form-control fontawesome-input-style"
+										placeholder="Enter your address">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.address.$error.required">Address
+										is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Mobile Number:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-phone fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="text" name="mobileNumber" ng-model="employee.mobileNumber"
+										required class="form-control fontawesome-input-style"
+										placeholder="Enter your mobile number">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.mobileNumber.$error.required">Mobile
+										number is required</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-style">
+							<label for="" class="level-style">Email Address:</label>
+							<div class="row">
+								<div class="col-sm-1">
+									<i class="fas fa-at fontawesome-style"></i>
+								</div>
+								<div class="col-sm-7">
+									<input type="email" name="email" ng-model="employee.emailAddress"
+										class="form-control fontawesome-input-style" required
+										placeholder="Enter your email address">
+								</div>
+								<div class="col-sm-4 validation-input-style">
+									<span ng-show="registerForm.email.$error.required">Email
+										is required</span> <span ng-show="registerForm.email.$error.email">Invalid
+										email address</span>
+								</div>
+							</div>
+						</div>
+						<div class="row border-forget-hyperlink">
+							<div class="col-sm-8">
+								<div class="row">
+									<div class="col-sm-6 cancel-button">
+										<a href="#!admin/viewemployees" role="button"
+											class="btn btn-success button-style btn-block-register-style">Cancel</a>
+									</div>
+									<div class="col-sm-6">
+										<a ng-click=save() role="button"
+											class="btn btn-success button-style btn-block-register-style">Save</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>

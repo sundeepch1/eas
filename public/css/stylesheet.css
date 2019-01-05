@@ -1,0 +1,292 @@
+.logout {
+	color: green !important;
+}
+
+.save-employee {
+	color: white !important;
+}
+
+.admin-cancel {
+	float: right;
+}
+
+.viewbystyle {
+	margin-left: -91%;
+}
+
+.table-td {
+	width: 14%;
+}
+
+.td-width {
+	width: 8%;
+}
+
+.table-header-edit-style {
+	padding-bottom: 3% !important;
+}
+
+.table-header-th-edit-style {
+	text-align: center
+}
+
+.table-header-employee-style {
+	font-size: 26px;
+	color: green;
+}
+
+.search-text-style {
+	padding-top: 6px;
+	text-align: right;
+}
+
+.calender-search-fontawesome-style {
+	margin-right: 32px;
+}
+
+.fontawesome-search-style {
+	margin-left: 0px;
+	margin-top: 0px;
+	border-width: 11px;
+	border-color: green;
+	border-style: solid;
+	border-radius: 4px;
+}
+
+.view-record-style {
+	padding-bottom: 1.5% !important;
+}
+
+.attendance-month-input {
+	margin-left: 2.5%;
+}
+
+.pagination {
+	display: inline-block;
+	margin-left: 31%;
+	margin-top: 2.5%;
+}
+
+.pagination li {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+}
+
+.pagination li.active {
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
+}
+
+.pagination li:hover:not (.active ) {
+	background-color: #ddd;
+}
+
+.pagination li:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.bg-light {
+	background-color: #ccffcc !important;
+}
+
+.title {
+	color: green;
+	margin-left: 80px;
+	margin-top: 76px;
+}
+
+.adjust-admin-user-login-border {
+	margin-right: 80px;
+	margin-left: -40px;
+}
+
+.title-image {
+	margin-left: 15px;
+	margin-right: -15px;
+}
+
+.admin-border {
+	border: 1px solid #d1d1e0;
+	border-radius: 10px;
+	margin-top: 35px;
+}
+
+.div-color {
+	background-color: #f5f5ef;
+}
+
+.login-title {
+	margin-top: 125px;
+	margin-left: 179px;
+}
+
+.admin-button {
+	margin-top: 125px;
+	margin-left: 245px;
+	margin-bottom: 125px;
+}
+
+.common-title {
+	margin-top: 55px;
+	text-align: center;
+	color: green;
+}
+
+hr {
+	margin-top: 110px;
+}
+
+.body-style {
+	margin-top: 90px;
+}
+
+.form-style {
+	border-width: 1px;
+	border-color: #d9d9d9;
+	border-radius: 10px;
+	border-style: solid;
+	margin-top: 35px;
+	margin-left: 290px;
+	margin-right: 290px;
+	margin-bottom: 125px;
+}
+
+.level-style {
+	margin-top: 5px;
+	/* margin-left: 25px; */
+	margin-right: 25px;
+	margin-left: -2px;
+}
+
+.level-top-style {
+	margin-top: 17px;
+	/* margin-left: 25px; */
+	margin-right: 25px;
+	margin-left: -2px;
+}
+
+.form-group-style {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.password-style {
+	margin-top: 5px;
+	margin-left: 8px;
+}
+
+.button-style {
+	float: right;
+	margin-right: 45px;
+	margin-top: 35px;
+	background-color: green;
+}
+
+.forget-style {
+	margin-top: 23px;
+}
+
+.forget-hyperlink {
+	margin-left: 20px;
+}
+
+.border-forget-hyperlink {
+	margin-bottom: 25px;
+}
+
+.register-login-style {
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: -8px;
+}
+
+.btn-block-style {
+	margin-left: 42px;
+	margin-right: 22px;
+}
+
+.btn-block-register-style {
+	margin-left: 42px;
+	margin-right: 16px;
+	color: white !important;
+}
+
+.fontawesome-style {
+	margin-left: -2px;
+	margin-top: 0px;
+	border-width: 11px;
+	border-color: green;
+	border-style: solid;
+	border-radius: 4px;
+}
+
+.fontawesome-input-style {
+	margin-left: -41px;
+}
+
+a {
+	color: green;
+}
+
+.carousel-after-border {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #d9d9d9;
+}
+
+hr.hr-style {
+	margin-top: 60px;
+}
+
+.attendance-border-style {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9d9d9;
+	border-radius: 10px;
+	padding-top: 85px;
+	padding-bottom: 85px;
+	/* padding-left: 149px; */
+	padding-right: 150px;
+}
+
+.attendance-row-style {
+	margin-top: 52px;
+	margin-bottom: 60px;
+}
+
+.calender-fontawesome-style {
+	margin-right: 39px;
+}
+
+.calender-input-style {
+	margin-right: 2px;
+}
+
+.validation-input-style {
+	margin-top: 8px;
+	margin-left: -45px;
+}
+
+.button-admin-view-employee-style {
+	float: right;
+	margin-right: 0px;
+	margin-top: 35px;
+}
+
+.admin-buttom-view {
+	margin-bottom: 110px;
+}
+
+.cancel-button {
+	padding-right: 215px;
+}

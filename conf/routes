@@ -1,0 +1,97 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+#GET     /ind                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+#GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+#GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+#GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+#GET	/css/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/css", file)
+#GET	/font-awesome/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/font-awesome", file)
+#GET	/logiciq-fonts/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/logiciq-fonts", file)
+#GET	/fonts/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/fonts", file)
+#GET	/images/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/images", file)
+#GET	/scripts/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/scripts", file)
+#GET	/styles/*file @com.ll.api.controllers.AssetsController.assets(path="/public/web/styles", file)
+#GET	/views/*file @com.ll.api.controllers.AssetsController.views(path="/public/web/views", file)
+#GET     /assets/*file               @com.ll.api.controllers.AssetsController.assets(path="/public", file)
+#GET     /cto/*file               @com.ll.api.controllers.AssetsController.assets(path="/public/web/cto", file)    
+
+
+#Controllers
+POST  	/employee/register 							controllers.ApplicationController.register()
+POST 	/employee/adminlogin						controllers.ApplicationController.adminLogin()
+POST  	/employee/employeelogin						controllers.ApplicationController.employeeLogin()
+GET		/employee/logout							controllers.ApplicationController.logout()
+POST 	/employee/forgetpassword					controllers.ApplicationController.forgetPassword()
+POST	/employee/employeesave						controllers.ApplicationController.employeeSave()
+GET		/employee/viewemployees						controllers.ApplicationController.viewEmployees()
+GET		/employee/employeedetails/:employeeId		controllers.ApplicationController.employeeDetails(employeeId:Integer)
+GET		/employee/employeeedit/:employeeId			controllers.ApplicationController.employeeEdit(employeeId:Integer)
+GET		/employee/employeedelete/:employeeId		controllers.ApplicationController.employeeDelete(employeeId:Integer)
+POST	/employee/resetpassword/:resetPasswordId	controllers.ApplicationController.resetPassword(resetPasswordId:String)
+GET     /employee/attendancedate					controllers.ApplicationController.attendanceDate()
+POST 	/employee/attendancesave					controllers.ApplicationController.attendanceSave()
+GET 	/employee/attendancedetails/:employeeId		controllers.ApplicationController.attendanceDetails(employeeId:Integer)
+GET 	/employee/adminattendancedetails/:employeeId controllers.ApplicationController.attendanceAdminDetails(employeeId:Integer)
+GET 	/employee/empattendancedetails				controllers.ApplicationController.attendanceEmpDetails()
+POST    /employee/attendanceeditsave 				controllers.ApplicationController.attendanceEditSave()
+POST    /employee/attendanceapproved				controllers.ApplicationController.attendanceApproved()
+POST    /employee/addemployee						controllers.ApplicationController.addEmployee()
+POST    /employee/search							controllers.ApplicationController.searchEmployee()
+
+#public html files								
+
+
+GET     /                  					 		controllers.Assets.at(path="/public/", file ="index.html")
+GET 	/eas/indexcarousel					 		controllers.Assets.at(path="/public/eas/", file ="indexcarousel.html")
+GET		/eas/login						 			controllers.Assets.at(path="/public/eas/", file="login.html")
+GET		/eas/adminlogin				 				controllers.Assets.at(path="/public/eas/", file="adminlogin.html")
+GET		/eas/employeelogin				 			controllers.Assets.at(path="/public/eas/", file="employeelogin.html")
+GET		/eas/register								controllers.Assets.at(path="/public/eas/", file="register.html")
+GET		/eas/forgetpassword							controllers.Assets.at(path="/public/eas/", file="forgetpassword.html")
+GET		/eas/adminindex								controllers.Assets.at(path="/public/eas/", file="adminindex.html")
+GET		/eas/employeeindex							controllers.Assets.at(path="/public/eas/", file="employeeindex.html")
+GET		/eas/viewemployees							controllers.Assets.at(path="/public/eas/", file="viewemployees.html")
+GET		/eas/employeedetails						controllers.Assets.at(path="/public/eas/", file="employeedetails.html")
+GET		/eas/employeeedit							controllers.Assets.at(path="/public/eas/", file="employeeedit.html")
+GET		/eas/resetpassword							controllers.Assets.at(path="/public/eas/", file="resetpassword.html")
+GET		/eas/employeeattendance						controllers.Assets.at(path="/public/eas/", file="employeeattendance.html")
+GET		/eas/attendancedetails						controllers.Assets.at(path="/public/eas/", file="attendancedetails.html")
+GET		/eas/adminattendancedetails					controllers.Assets.at(path="/public/eas/", file="adminattendancedetails.html")
+GET 	/eas/attendanceedit							controllers.Assets.at(path="/public/eas/", file="attendanceedit.html")
+GET 	/eas/addemployee							controllers.Assets.at(path="/public/eas/", file="addemployee.html")
+GET 	/admin/attendance							controllers.Assets.at(path="/public/eas/", file="adminattendance.html")
+
+
+#Stylesheets
+GET     /css/bootstrap.min.css                   	controllers.Assets.at(path="/public/css/", file ="bootstrap.min.css")
+GET     /css/bootstrap-datepicker3.css           	controllers.Assets.at(path="/public/css/", file ="bootstrap-datepicker3.css")
+GET     /css/fontawesome/css/all.min.css         	controllers.Assets.at(path="/public/css/fontawesome/css/", file ="all.min.css")
+GET     /css/stylesheet.css                      	controllers.Assets.at(path="/public/css/", file ="stylesheet.css")
+
+#Javascripts
+
+
+GET     /javascripts/jquery.min.js               	controllers.Assets.at(path="/public/javascripts/", file ="jquery.min.js")
+GET     /javascripts/popper.min.js               	controllers.Assets.at(path="/public/javascripts/", file ="popper.min.js")
+GET     /javascripts/bootstrap.min.js            	controllers.Assets.at(path="/public/javascripts/", file ="bootstrap.min.js")
+GET     /javascripts/bootstrap-datepicker.min.js 	controllers.Assets.at(path="/public/javascripts/", file ="bootstrap-datepicker.min.js")
+GET     /javascripts/angular.min.js              	controllers.Assets.at(path="/public/javascripts/", file ="angular.min.js")
+GET     /javascripts/angular-route.js            	controllers.Assets.at(path="/public/javascripts/", file ="angular-route.js")
+GET     /javascripts/ui-bootstrap-tpls.js           controllers.Assets.at(path="/public/javascripts/", file ="ui-bootstrap-tpls.js")
+GET     /javascripts/angular-cookies.js           controllers.Assets.at(path="/public/javascripts/", file ="angular-cookies.js")
+GET     /javascripts/underscore.js           controllers.Assets.at(path="/public/javascripts/", file ="underscore.js")
+GET     /javascripts/javascript.js               	controllers.Assets.at(path="/public/javascripts/", file ="javascript.js")
+
+
+#images
+GET 	/images/favicon.ico							controllers.Assets.at(path="/public/images/", file="favicon.ico")
+GET     /images/carousel.png						controllers.Assets.at(path="/public/images/", file="carousel.png")
+GET 	/images/logo.png							controllers.Assets.at(path="/public/images/", file="logo.png")
