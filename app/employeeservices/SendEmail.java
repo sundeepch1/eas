@@ -7,7 +7,7 @@ import java.util.Properties;
 public class SendEmail {
 
 	final String senderEmailID = "employeeattendancesystem365@gmail.com";
-	final String senderPassword = "muna123.";
+	final String senderPassword = "muna.";
 	final String emailSMTPserver = "smtp.gmail.com";
 	final String emailServerPort = "465";
 
